@@ -7,12 +7,24 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		csslint: {
+			strict: {
+				options: {
+					import: 2,
+					ids: false,
+					'duplicate-properties': 2,
+					'empty-rule': 2,
+
+				},
+				src: ['assets/css/style.css', 'assets/scss/style.scss']
+			}
+		},
 		cssmin: {
 			target: {
 				files: [{
 					expand: true,
 					cwd: `assets/css/`,
-					src: [`*.css`, `!*.min.css`],
+					src: [`style.css`, `!style.min.css`],
 					dest: `assets/css/`,
 					ext: `.min.css`
 				}]
@@ -21,7 +33,7 @@ module.exports = function(grunt) {
 		uglify: {
 			my_target: {
 				files: {
-					'assets/js/main.min.js': [`assets/js/main.js`]
+					'assets/js/script.min.js': [`assets/js/script.js`]
 				},
 				options: {
 					esversion: 6
@@ -29,14 +41,14 @@ module.exports = function(grunt) {
 			}
 		},
 		jshint: {
-			files: [`assets/js/*.js`, `!assets/js/*.min.js`],
+			files: [`assets/js/script.js`, `!assets/js/script.min.js`],
 			options: {
 				esversion: 6
 			}
 		},
 		watch: {
 			js: {
-				files: [`assets/js/*.js`, `!assets/js/*.min.js`],
+				files: [`assets/js/script.js`, `!assets/js/script.min.js`],
 				tasks: [`jshint`, `uglify`]
 			},
 			sass: {
@@ -44,13 +56,14 @@ module.exports = function(grunt) {
 				tasks: [`sass`]
 			},
 			cssmin: {
-				files: [`assets/css/*.css`, `!assets/css/*.min.css`],
-				tasks: [`cssmin`]
+				files: [`assets/css/style.css`, `!assets/css/style.min.css`],
+				tasks: [`cssmin`, 'csslint']
 			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
