@@ -37,7 +37,7 @@ register_default_headers( array(
 
 $customeHeaderDefaults = array(
     'width' => 1280,
-    'height' => 720,
+    'height' => 150,
     'default-image' => get_template_directory_uri() . '/assets/images/the-black-sheep.jpg'
 );
 add_theme_support('custom-header', $customeHeaderDefaults);
