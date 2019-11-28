@@ -16,7 +16,7 @@
                                 <div class="col-12 col-md-4">
                                     <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12 col-md-8">
                                     <?php the_excerpt(); ?>
                                     <a href="<?php the_permalink(); ?>" class="btn primary text-white">View More</a>
                                 </div>
