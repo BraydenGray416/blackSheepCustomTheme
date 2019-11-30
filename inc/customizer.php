@@ -14,6 +14,22 @@ function mytheme_customize_register( $wp_customize ) {
         'settings'   => 'blackSheep_primaryColour',
     ) ) );
 
+    $wp_customize->add_section( 'blackSheep_slideshowSection' , array(
+        'title'      => __( 'Slideshow', 'blackSheepCustom' ),
+        'priority'   => 30,
+    ) );
+    for ($i=1; $i <=3 ; $i++) {
+        $wp_customize->add_setting( 'blackSheep_slide_'.$i , array(
+            'default'   => '',
+            'transport' => 'refresh',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'blackSheep_slide_'.$i.'Control', array(
+            'label'      => __( 'Add Slide ' . $i, 'blackSheepCustom' ),
+            'section'    => 'blackSheep_slideshowSection',
+            'settings'   => 'blackSheep_slide_'.$i,
+        ) ) );
+    }
+
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 

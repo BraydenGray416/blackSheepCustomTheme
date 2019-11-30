@@ -43,5 +43,59 @@ $customeHeaderDefaults = array(
 add_theme_support('custom-header', $customeHeaderDefaults);
 
 add_theme_support('wp-block-styles');
+function add_custom_post_types(){
+
+    $args = array(
+        'labels' => array(
+            'name' => 'Adoptions',
+            'singular_name' => 'Adoption',
+            'add_new_item' => 'Add New Adoption'
+        ),
+        'description' => 'A list of all the Adoptions we have in our website',
+        'public' => true,
+        'hierarchial' => true,
+        'show_in_nav_menus' => false,
+        'show_in_rest' => false,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-text-page',
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',
+            'post-formats'
+        ),
+        'delete_with_user' => false
+    );
+
+    register_post_type('adoption', $args);
+    
+    $args = array(
+        'labels' => array(
+            'name' => 'Animals',
+            'singular_name' => 'Animal',
+            'add_new_item' => 'Add New Animal'
+        ),
+        'description' => 'A list of all the Animals we have in our website',
+        'public' => true,
+        'hierarchial' => true,
+        'show_in_nav_menus' => false,
+        'show_in_rest' => false,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-heart',
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail',
+            'post-formats'
+        ),
+        'delete_with_user' => false
+    );
+
+    register_post_type('animals', $args);
+
+
+}
+
+add_action('init', 'add_custom_post_types');
 
 require_once get_template_directory() . '/inc/customizer.php';
