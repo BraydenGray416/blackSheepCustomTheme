@@ -29,8 +29,8 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
 register_default_headers( array(
     'defaultImage' => array(
-        'url'           => get_template_directory_uri() . '/assets/images/the-black-sheep.jpg',
-        'thumbnail_url' => get_template_directory_uri() . '/assets/images/the-black-sheep.jpg',
+        'url'           => get_template_directory_uri() . '/assets/images/sheepMountain.jpg',
+        'thumbnail_url' => get_template_directory_uri() . '/assets/images/sheepMountain.jpg',
         'description'   => __( 'The default image for the custom header.', 'blackSheepCustom' )
     )
 ) );
@@ -38,7 +38,7 @@ register_default_headers( array(
 $customeHeaderDefaults = array(
     'width' => 1280,
     'height' => 150,
-    'default-image' => get_template_directory_uri() . '/assets/images/the-black-sheep.jpg'
+    'default-image' => get_template_directory_uri() . '/assets/images/sheepMountain.jpg'
 );
 add_theme_support('custom-header', $customeHeaderDefaults);
 

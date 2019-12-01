@@ -30,7 +30,7 @@ function mytheme_customize_register( $wp_customize ) {
         'title'      => __( 'Slideshow', 'blackSheepCustom' ),
         'priority'   => 30,
     ) );
-    for ($i=1; $i <=3 ; $i++) {
+    for ($i=1; $i <=12 ; $i++) {
         $wp_customize->add_setting( 'blackSheep_slide_'.$i , array(
             'default'   => '',
             'transport' => 'refresh',
@@ -41,6 +41,12 @@ function mytheme_customize_register( $wp_customize ) {
             'settings'   => 'blackSheep_slide_'.$i,
         ) ) );
     }
+
+    $wp_customize->add_section( 'blackSheep_multiImageSection', array(
+        'title'     => __( 'Multi Images', 'blackSheepCustom'),
+        'priority'  => 30,
+    ) );
+
 
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
