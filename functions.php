@@ -68,7 +68,7 @@ function add_custom_post_types(){
     );
 
     register_post_type('adoption', $args);
-    
+
     $args = array(
         'labels' => array(
             'name' => 'Animals',
@@ -91,8 +91,9 @@ function add_custom_post_types(){
         'delete_with_user' => false
     );
 
-    register_post_type('animals', $args);
+    register_post_type('animal', $args);
 
+    add_image_size('medium_thumbnail', 200, 200, true);
 
 }
 
