@@ -46,7 +46,17 @@ function mytheme_customize_register( $wp_customize ) {
         'title'     => __( 'Multi Images', 'blackSheepCustom'),
         'priority'  => 30,
     ) );
-
+    for ($m=1; $m <=6 ; $m++) {
+        $wp_customize->add_setting( 'blackSheep_multiImage_'.$m , array(
+            'default'   =>'',
+            'transport' =>'refresh',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'blackSheep_multiImage_'.$m.'Control', array(
+            'label'     =>__( 'Add Image ' .$m, 'blackSheepCustom'),
+            'section'   =>'blackSheep_multiImageSection',
+            'settings'  =>'blackSheep_multiImage_'.$m,
+        ) ) );
+    }
 
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
