@@ -41,7 +41,7 @@ Template Post Type: page
                                 <div class="col-12 col-md-8">
                                     <?php the_excerpt(); ?>
                                     <a href="<?php the_permalink(); ?>" class="btn primary text-white">View More</a>
-                                    <a href="<?php the_permalink(); ?>" class="btn secondary text-white">Inquire</a>
+                                    <a href="mailto:blacksheepotaki@gmail.com?Subject=<?php the_title(); ?>" target="_top" class="btn secondary text-white">Enquire</a>
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
@@ -60,7 +60,7 @@ Template Post Type: page
                                 <div class="col-12 col-md-8">
                                     <?php the_excerpt(); ?>
                                     <a href="<?php the_permalink(); ?>" class="btn primary text-white">View More</a>
-                                    <a href="<?php the_permalink(); ?>" class="btn secondary text-white">Inquire</a>
+                                    <a href="mailto:blacksheepotaki@gmail.com?Subject=<?php the_title(); ?>" target="_top" class="btn secondary text-white">Enquire</a>
                                 </div>
                             </div>
                         </div>

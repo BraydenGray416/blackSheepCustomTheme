@@ -30,7 +30,7 @@ function mytheme_customize_register( $wp_customize ) {
         'title'      => __( 'Slideshow', 'blackSheepCustom' ),
         'priority'   => 30,
     ) );
-    for ($i=1; $i <=12 ; $i++) {
+    for ($i=1; $i <=20 ; $i++) {
         $wp_customize->add_setting( 'blackSheep_slide_'.$i , array(
             'default'   => '',
             'transport' => 'refresh',
@@ -58,6 +58,23 @@ function mytheme_customize_register( $wp_customize ) {
         ) ) );
     }
 
+    $wp_customize->add_section( 'textSections', array(
+        'title'      => __( 'Text Sections', 'blackSheepCustom'),
+        'priority'   => 30,
+    ) );
+
+    $wp_customize->add_setting( 'blackSheep_headerSubtext', array(
+        'default'    => '',
+        'transport'  => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control ($wp_customize, 'blackSheep_headerSubtextControl', array(
+        'label'     =>__( 'Enter in the text for underneath the header image', 'blackSheepCustom'),
+        'section'   => 'textSections',
+        'settings'  => 'blackSheep_headerSubtext',
+        'type'      => 'text',
+    )
+));
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 
@@ -65,12 +82,12 @@ function mytheme_customize_css()
 {
     ?>
     <style type="text/css">
-        .primary {
-            background-color: <?php echo get_theme_mod('blackSheep_primaryColour', '#000000'); ?>;
-        }
-        .secondary {
-            background-color: <?php echo get_theme_mod('blackSheep_secondaryColour', '#10a72e'); ?>
-        }
+    .primary {
+        background-color: <?php echo get_theme_mod('blackSheep_primaryColour', '#000000'); ?>;
+    }
+    .secondary {
+        background-color: <?php echo get_theme_mod('blackSheep_secondaryColour', '#10a72e'); ?>
+    }
     </style>
     <?php
 }
