@@ -73,8 +73,19 @@ function mytheme_customize_register( $wp_customize ) {
         'section'   => 'textSections',
         'settings'  => 'blackSheep_headerSubtext',
         'type'      => 'text',
-    )
-));
+    )));
+
+    $wp_customize->add_setting( 'blackSheep_footerText', array(
+        'default'    => '',
+        'transport'  => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control ($wp_customize, 'blackSheep_footerTextControl', array(
+        'label'     =>__( 'Enter in the text for underneath the header image', 'blackSheepCustom'),
+        'section'   => 'textSections',
+        'settings'  => 'blackSheep_footerText',
+        'type'      => 'text',
+    )));
 }
 add_action( 'customize_register', 'mytheme_customize_register' );
 

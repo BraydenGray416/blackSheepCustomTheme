@@ -1,5 +1,5 @@
 #homeCarousel{
-    height: 400px;
+    height: 600px;
 }
 #adoptionCards:nth-of-type(odd) {
   display: flex;
@@ -41,4 +41,12 @@
 .multiImagesRow{
     width: 80%;
     margin: 0 auto;
+}
+
+.footerBlock{
+    height: 100px;
+}
+
+.carousel-inner{
+    height: 600px;
 }

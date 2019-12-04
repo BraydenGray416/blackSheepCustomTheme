@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container my-3">
     <?php if (has_header_image()): ?>
         <div class="container-fluid p-0">
             <img src="<?php echo(get_header_image()); ?>" alt="" class="img-fluid">
@@ -9,15 +9,7 @@
     <div class="h4 d-flex justify-content-center text-center my-5">
         <?php echo get_theme_mod('blackSheep_headerSubtext'); ?>
     </div>
-    <div class="row justify-content-center multiImagesRow">
-        <?php for ($m=1; $m < 6; $m++): ?>
-            <?php if (get_theme_mod('blackSheep_multiImage_'.$m)): ?>
-                <div class="d-flex flex-wrap flex-column ">
-                    <img src="<?php echo get_theme_mod('blackSheep_multiImage_'.$m); ?>" alt="Sister Company image" class="multiImages">
-                </div>
-            <?php endif; ?>
-        <?php endfor; ?>
-    </div>
+
     <?php
     for ($i=1; $i <= 20 ; $i++) {
         if(get_theme_mod('blackSheep_slide_'.$i)){
@@ -28,7 +20,7 @@
     ?>
 
     <?php if(isset($firstSlide)): ?>
-        <div class="container">
+        <div class="container my-1 align-self-center justify-content-center">
             <div id="homeCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <?php for ($i=1; $i <= 20 ; $i++): ?>
@@ -53,6 +45,15 @@
     <?php while (have_posts()): the_post(); ?>
         <?php the_content(); ?>
     <?php endwhile; ?>
+    <div class="row justify-content-center multiImagesRow">
+        <?php for ($m=1; $m < 6; $m++): ?>
+            <?php if (get_theme_mod('blackSheep_multiImage_'.$m)): ?>
+                <div class="d-flex flex-wrap flex-column ">
+                    <img src="<?php echo get_theme_mod('blackSheep_multiImage_'.$m); ?>" alt="Sister Company image" class="multiImages">
+                </div>
+            <?php endif; ?>
+        <?php endfor; ?>
+    </div>
 </div>
 
 
