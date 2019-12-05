@@ -36,7 +36,7 @@ Template Post Type: page
                 <div class="col-12 d-flex justify-content-center col-sm-3">
                     <div class="card border-0 p-3 h-100">
                         <h5 class="text-center card-title"><?php the_title(); ?></h5>
-                        <?php the_post_thumbnail('medium_thumbnail', ['class' => 'card-img-fluid']); ?>
+                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium_thumbnail', ['class' => 'card-img-fluid']); ?></a>
                         <div class="card-body">
                             <?php the_excerpt(); ?>
                             <a href="<?php the_permalink(); ?>" class="btn primary text-white btn-block">Read more</a>
