@@ -50,3 +50,12 @@
 .carousel-inner{
     height: 600px;
 }
+
+@media only screen and (max-width: 576px) {
+    #homeCarousel{
+        height: 300px;
+    }
+    .carousel-inner{
+        height: 300px;
+    }
+}

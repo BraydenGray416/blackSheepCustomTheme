@@ -5,14 +5,13 @@
     <meta charset="utf-8">
     <title>Black Sheep Sanctuary</title>
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="assets\css\style.min.css">
 </head>
 <body>
     <?php if (has_nav_menu('top_navigation')): ?>
         <nav id="header" class="navbar navbar-expand-md navbar-dark primary" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top_navigation" aria-controls="top_navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
