@@ -2,7 +2,7 @@
 
 <div class="container my-3">
     <?php if (has_header_image()): ?>
-        <div class="container-fluid p-0">
+        <div class="container-fluid d-flex justify-content-center p-0">
             <img src="<?php echo(get_header_image()); ?>" alt="" class="img-fluid">
         </div>
     <?php endif; ?>
